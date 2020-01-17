@@ -5,6 +5,7 @@ import * as types from '../constants/actionTypes';
 
 export default function* searchMediaSaga({ payload }) {
   try {
+    yield put({type:types.RESET_REDUCER_STORE})
     const videos = yield call(shutterStockVideos, payload);
     const images = yield call(unsplashImages, payload);
     const imgArr = images.results;

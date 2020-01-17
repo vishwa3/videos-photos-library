@@ -17,9 +17,9 @@ const rootReducer = (state, action) => {
   if (action.type === types.RESET_REDUCER_STORE) {
     console.log("action",action)
     state = undefined
-    if(action.callback) {
+   /*  if(action.callback) {
       action.callback();
-    }
+    } */
   }
  return appReducer(state, action)
 }

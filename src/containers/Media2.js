@@ -20,13 +20,13 @@ export function Media2(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     console.log("useEffect");
-   // dispatch(searchMediaAction("rain"));
-   dispatch({type:types.RESET_REDUCER_STORE,
+   dispatch(searchMediaAction("rain"));
+   /* dispatch({type:types.RESET_REDUCER_STORE,
      callback: () => {
        console.log("in callback hehe")
        dispatch(searchMediaThunk("rain"));
      }
-   });
+   }); */
   }, []);
 
 /*   const images = useSelector(state =>state.images[0]);
@@ -51,13 +51,13 @@ export function Media2(props) {
     event.preventDefault();
    // dispatch(resetReduxStore());
     if (query.current.value !== null && query.current.value !== "") {
-  //  dispatch(searchMediaAction(query.current.value));
-  dispatch({type:types.RESET_REDUCER_STORE,
+  dispatch(searchMediaAction(query.current.value));
+  /* dispatch({type:types.RESET_REDUCER_STORE,
     callback: () => {
       console.log("in callback hehe")
       dispatch(searchMediaThunk(query.current.value));
     }
-  });
+  }); */
  // dispatch(searchMediaThunk(query.current.value));
       query.current.value = "";
     }
