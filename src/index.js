@@ -11,12 +11,12 @@ import configureStore from './store/configureStore';
 import App from './containers/App'
 import MediaGalleryPage from './containers/MediaGalleryPage'
 import Media2 from './containers/Media2'
-
+import MediaThunk from './containers/MediaThunk'
 const store = configureStore();
 store.subscribe(() => {
   const newState = store.getState();
   // check out your updated state
-  console.log("NS", newState)
+ // console.log("NS", newState)
 });
 /* function Routing() {
   return (

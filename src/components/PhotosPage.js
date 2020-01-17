@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{ useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const PhotosPage = ({ images, onHandleSelectImage, selectedImage }) => (
+const PhotosPage = ({ images, onHandleSelectImage, selectedImage }) =>{
+return (
   <div className="col-md-6">
     <h2>Images</h2>
     <div className="selected-image">
@@ -19,6 +20,7 @@ const PhotosPage = ({ images, onHandleSelectImage, selectedImage }) => (
     </div>
   </div>
 );
+} 
 
 PhotosPage.propTypes = {
   images: PropTypes.array.isRequired,

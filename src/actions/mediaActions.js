@@ -14,3 +14,5 @@ export const searchMediaAction = (payload) => ({
   type: types.SEARCH_MEDIA_REQUEST,
   payload
 });
+
+
