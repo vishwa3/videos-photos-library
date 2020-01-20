@@ -24,6 +24,7 @@ import * as types from '../constants/actionTypes';
 
 const searchMediaThunk = (payload) => (dispatch) => {
   try {
+    dispatch({type:types.RESET_REDUCER_STORE});
     shutterStockVideos(payload).then((videos) =>{
       dispatch({type:types.SHUTTER_VIDEOS_SUCCESS,videos})
       dispatch({type:types.SELECTED_VIDEO,video:videos[0]})

@@ -12,6 +12,8 @@ import App from './containers/App'
 import MediaGalleryPage from './containers/MediaGalleryPage'
 import Media2 from './containers/Media2'
 import MediaThunk from './containers/MediaThunk'
+import Header from './common/Header';
+import HomePage from './components/HomePage'
 const store = configureStore();
 store.subscribe(() => {
   const newState = store.getState();
@@ -30,9 +32,9 @@ store.subscribe(() => {
 ReactDOM.render(
   <Provider store={store}>
     <Router>
+    <Header />
       <Switch>  
         <Route exact path="/" component={App} />
-      {/*  <Route path="/library" component={MediaGalleryPage} />  */}
       <Route path="/library" component={Media2} />
       </Switch>
     </Router>

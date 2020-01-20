@@ -16,17 +16,11 @@ import * as types from '../constants/actionTypes';
 
 export function Media2(props) {
   const query = useRef(null);
-  //const {dispatch} = props;
   const dispatch = useDispatch();
   useEffect(() => {
     console.log("useEffect");
-   dispatch(searchMediaAction("rain"));
-   /* dispatch({type:types.RESET_REDUCER_STORE,
-     callback: () => {
-       console.log("in callback hehe")
-       dispatch(searchMediaThunk("rain"));
-     }
-   }); */
+  dispatch(searchMediaAction("rain"));
+  // dispatch(searchMediaThunk("rain"));
   }, []);
 
 /*   const images = useSelector(state =>state.images[0]);
@@ -49,16 +43,9 @@ export function Media2(props) {
 
   const handleSearch = event => {
     event.preventDefault();
-   // dispatch(resetReduxStore());
     if (query.current.value !== null && query.current.value !== "") {
-  dispatch(searchMediaAction(query.current.value));
-  /* dispatch({type:types.RESET_REDUCER_STORE,
-    callback: () => {
-      console.log("in callback hehe")
-      dispatch(searchMediaThunk(query.current.value));
-    }
-  }); */
- // dispatch(searchMediaThunk(query.current.value));
+    dispatch(searchMediaAction(query.current.value));
+  //dispatch(searchMediaThunk(query.current.value));
       query.current.value = "";
     }
   };
@@ -68,7 +55,8 @@ export function Media2(props) {
     <div className="container-fluid">
       {images.length>0 && Object.keys(selectedImage).length>0 && videos.length>0 && Object.keys(selectedVideo).length>0 ? (
         <div>
-          <input
+         <div className="searchButton">
+           <input
             type="text"
             // ref={ref => (this.query = ref)}
             ref={query}
@@ -78,7 +66,10 @@ export function Media2(props) {
             className="btn btn-primary"
             value="Search Library"
             onClick={handleSearch}
+            style={{marginLeft:5}}
           />
+          </div>
+          
           <div className="row">
             <PhotosPage
               images={images}

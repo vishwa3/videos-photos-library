@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 const VideosPage = ({ videos, onHandleSelectVideo, selectedVideo }) => (
   <div className="col-md-6">
-    <h2>Videos</h2>
-    <div className="select-video">
+    <h2 className="heading">Videos</h2>
+    {/* <div className="select-video">
       <div key={selectedVideo.id}>
-        <h6 className="title">{selectedVideo.description}</h6>
+        {<h6 className="title">{selectedVideo.description}</h6>}
         <video controls src={selectedVideo.mediaUrl} alt={selectedVideo.title} />
       </div>
-    </div>
-    <div className="video-thumbnail">
+    </div> */}
+    <div className="select-video">
       {videos.map(video => (
         <div key={video.id} onClick={onHandleSelectVideo.bind(this, video)}>
           <video controls src={video.mediaUrl} alt={video.description} />

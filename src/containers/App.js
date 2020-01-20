@@ -5,10 +5,9 @@ import HomePage from '../components/HomePage';
 // route the user navigates to.
 class App extends Component {
   render() {
-    console.log("in App");
     return (
       <div className="container-fluid text-center">
-        <Header />
+     {/*    <Header /> */}
         <HomePage />
       </div>
     );

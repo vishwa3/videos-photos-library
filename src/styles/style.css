@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, Sans-Serif, sans-serif;
-  background: white;
+  background: aliceblue;
 }
 
 .title {
@@ -21,7 +21,7 @@ body {
   height: 450px;
 }
 
-.image-thumbnail, .video-thumbnail {
+/* .image-thumbnail, .video-thumbnail {
   display: flex;
   justify-content: space-around;
   overflow: auto;
@@ -33,7 +33,7 @@ body {
   height: 70px;
   padding: 1px;
   border: 1px solid grey;
-}
+} */
 
 .centre {
   margin: auto;
@@ -48,4 +48,19 @@ body {
 }
 .loader {
   font-size: 100px;
+}
+
+.searchButton {
+  padding-top: 20px;
+  padding-left: 220px;
+  margin: auto;
+  width: 50%;
+}
+
+.heading {
+  padding-top: 20px;
+  padding-left: 100px;
+  font-family: cursive;
+  margin: auto;
+  width: 50%;
 }
