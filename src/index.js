@@ -14,20 +14,14 @@ import Media2 from './containers/Media2'
 import MediaThunk from './containers/MediaThunk'
 import Header from './common/Header';
 import HomePage from './components/HomePage'
+import Photos from './containers/Photos'
+import Videos from './containers/Videos'
 const store = configureStore();
 store.subscribe(() => {
   const newState = store.getState();
   // check out your updated state
- // console.log("NS", newState)
+// console.log("NS", newState)
 });
-/* function Routing() {
-  return (
-    <Router>
-      <Route exact path="/" component={App} />
-      <Route exact path="/library" component={MediaGalleryPage} />
-    </Router>
-  )
-} */
 
 ReactDOM.render(
   <Provider store={store}>
@@ -36,6 +30,8 @@ ReactDOM.render(
       <Switch>  
         <Route exact path="/" component={App} />
       <Route path="/library" component={Media2} />
+      <Route path='/searchImages' component={Photos} />
+      <Route path='/searchVideos' component={Videos} />
       </Switch>
     </Router>
   </Provider>, document.getElementById('root')

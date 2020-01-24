@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-/* import PropTypes from "prop-types";
-import { connect } from "react-redux"; */
+ import PropTypes from "prop-types";
+/*import { connect } from "react-redux"; */
 import {
   selectImageAction,
   searchMediaAction,
@@ -20,6 +20,7 @@ export function Media2(props) {
   useEffect(() => {
     console.log("useEffect");
   dispatch(searchMediaAction("rain"));
+ // query.current.focus();
   // dispatch(searchMediaThunk("rain"));
   }, []);
 
@@ -44,7 +45,7 @@ export function Media2(props) {
   const handleSearch = event => {
     event.preventDefault();
     if (query.current.value !== null && query.current.value !== "") {
-    dispatch(searchMediaAction(query.current.value));
+    dispatch(searchMediaAction(query.current.value,"image"));
   //dispatch(searchMediaThunk(query.current.value));
       query.current.value = "";
     }
@@ -90,14 +91,14 @@ export function Media2(props) {
   );
 }
 
-/* Media2.propTypes = {
+Media2.propTypes = {
   images: PropTypes.array,
   selectedImage: PropTypes.object,
   videos: PropTypes.array,
   selectedVideo: PropTypes.object,
-  dispatch: PropTypes.func.isRequired
+  /* dispatch: PropTypes.func.isRequired */
 };
- */
+
 /* Subscribe component to redux store and merge the state into component\s props */
 /*  const mapStateToProps = ({ images, videos }) => ({
   images: images[0],

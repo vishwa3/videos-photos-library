@@ -10,9 +10,11 @@ export const selectVideoAction = (video) => ({
   video
 });
 
-export const searchMediaAction = (payload) => ({
+export const searchMediaAction = (searchValue,searchCategory) => ({
   type: types.SEARCH_MEDIA_REQUEST,
-  payload
+  payload : {
+    searchValue,
+    searchCategory
+  }
 });
-
 

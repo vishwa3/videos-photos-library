@@ -11,8 +11,8 @@ const authParameters = {
   }
 };
 
-export const shutterStockVideos = (searchQuery) => {
-  const SHUTTERSTOCK_API_ENDPOINT = `https://api.shutterstock.com/v2/videos/search?query=${searchQuery}&page=1&per_page=10`;
+/* export const shutterStockVideos = (searchQuery) => {
+  const SHUTTERSTOCK_API_ENDPOINT = `https://api.shutterstock.com/v2/videos/search?query=${searchQuery}&page=1&per_page=30`;
   return fetch(SHUTTERSTOCK_API_ENDPOINT, authParameters)
   .then(response => {
     return response.json();
@@ -24,30 +24,38 @@ export const shutterStockVideos = (searchQuery) => {
         description
       }));
   });
-};
+}; */
 
-export const unsplashImages = (searchQuery) => {
-  return fetch(`https://api.unsplash.com/search/photos/${UNSPLASH_KEY}&page=1&query=${searchQuery}`)
+export const shutterStockVideos = async (searchQuery) => {
+  const SHUTTERSTOCK_API_ENDPOINT = `https://api.shutterstock.com/v2/videos/search?query=${searchQuery}&page=1&per_page=20`;
+  const response = await fetch(SHUTTERSTOCK_API_ENDPOINT, authParameters);
+  const json = await response.json();
+  if(response.status >=400) {
+    throw new Error(json.errors);
+  }
+  return json.data.map(({id,assets,description})=>({
+    id,
+    mediaUrl:assets.preview_mp4.url,
+    description
+  }))
+}
+
+/* export const unsplashImages = (searchQuery) => {
+  return fetch(`https://api.unsplash.com/search/photos/${UNSPLASH_KEY}&page=1&query=${searchQuery}&per_page=200`)
   .then(response => {
     return response.json();
   })
   .then(json => {
     return json;
   })
-  }
+  } */
 
-/* export const flickrImages = (searchQuery) => {
-  console.log("flickr", searchQuery);
-  const FLICKR_API_ENDPOINT = `https://api.flickr.com/services/rest/?method=flickr.photos.search&text=${searchQuery}&api_key=${FLICKR_API_KEY}&format=json&nojsoncallback=1&per_page=10`;
-  return fetch(FLICKR_API_ENDPOINT)
-    .then(response => {
-      return response.json()
-    })
-    .then(json => {
-      return json.photos.photo.map(({ farm, server, id, secret, title }) => ({
-        id,
-        title,
-        mediaUrl: `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`
-      }));
-    });
-}; */
+  export const unsplashImages = async (searchQuery) => {
+    const response = await fetch(`https://api.unsplash.com/search/photos/${UNSPLASH_KEY}&page=1&query=${searchQuery}&per_page=10`);
+    const json = await response.json();
+    if(response.status >=400) {
+      console.log("errj",json.errors);
+      throw new Error(json.errors);
+    }
+    return json;
+  }

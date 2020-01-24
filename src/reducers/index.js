@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import img from './imageReducer';
 import vid from './videoReducer';
+import errorReducer from './errorReducer';
 import * as types from '../constants/actionTypes';
 // Combines all reducers to a single reducer function
 /* const rootReducer = combineReducers({
@@ -10,7 +11,8 @@ import * as types from '../constants/actionTypes';
 
 const appReducer = combineReducers({
   img, 
-  vid
+  vid,
+  errorReducer,
 });
 
 const rootReducer = (state, action) => {
