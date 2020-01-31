@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
+import React, { /* useEffect, */ useRef } from "react";
+//import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from './react-redux-hooks';
 import { searchMediaAction } from "../actions/mediaActions";
 
 import "../styles/style.css";
@@ -11,15 +11,13 @@ export function Photos(props) {
   const query = useRef(null);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("useEffect");
+  React.useEffect(() => {
     dispatch(searchMediaAction("dakota", "image"));
     // query.current.focus();
     // dispatch(searchMediaThunk("rain"));
   }, []);
 
   const images = useSelector(state => state.img.imageArray);
-  console.log("type", typeof images, "  ", "len", images.length);
   const error = useSelector(state => state.errorReducer.error);
 
 
@@ -53,6 +51,7 @@ export function Photos(props) {
               type="submit"
               className="btn btn-primary"
               value="Search Images"
+              id="search"
               onClick={handleSearch}
             />
           </div>
@@ -84,7 +83,7 @@ export function Photos(props) {
             value="Search Images"
             onClick={handleSearch}
           />
-        </div><h3>API Error</h3>{error && <div className="error">{JSON.stringify(error)}</div>}</div>)
+        </div><h3>Error</h3>{error && <div className="error">{JSON.stringify(error)}</div>}</div>)
       }
 
     </div>

@@ -20,7 +20,7 @@ const store = configureStore();
 store.subscribe(() => {
   const newState = store.getState();
   // check out your updated state
-// console.log("NS", newState)
+ console.log("NS", newState)
 });
 
 ReactDOM.render(

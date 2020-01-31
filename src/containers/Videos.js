@@ -77,7 +77,7 @@ function Videos() {
           value="Search Videos"
           onClick={handleSearch}
         />
-      </div><h3>API Error</h3>{error && <div className="error">{JSON.stringify(error)}</div>}</div>)}
+      </div><h3>Error</h3>{error && <div className="error">{JSON.stringify(error)}</div>}</div>)}
 
     </div>
   )

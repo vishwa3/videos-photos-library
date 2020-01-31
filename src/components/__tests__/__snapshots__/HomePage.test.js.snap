@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage snapshot for HomePage 1`] = `
+<div
+  className="jumbotron center"
+>
+  <h1
+    className="lead"
+    style={
+      Object {
+        "fontFamily": "Pacifico",
+      }
+    }
+  >
+    Welcome to Media Library built with React, Redux, and Redux-saga 
+  </h1>
+  <div>
+    <a
+      href="/library"
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-lg btn-primary"
+      >
+         Visit Library
+      </button>
+    </a>
+  </div>
+</div>
+`;

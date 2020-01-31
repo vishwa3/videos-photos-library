@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Photos on start snapshot of Photos component 1`] = `
+<div
+  className="container-fluid"
+>
+  <div>
+     
+    <div
+      className="searchButton"
+    >
+      <input
+        onKeyPress={[Function]}
+        style={
+          Object {
+            "marginRight": 5,
+          }
+        }
+        type="text"
+      />
+      <input
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="submit"
+        value="Search Images"
+      />
+    </div>
+    <h3>
+      Error
+    </h3>
+    <div
+      className="error"
+    >
+      {"img":{"imageArray":[]},"vid":{"videoArray":[]},"errorReducer":{"error":null}}
+    </div>
+  </div>
+</div>
+`;

@@ -21,7 +21,7 @@ import * as types from '../constants/actionTypes';
 
 const initial = {
   imageArray:[],
-    selectedImage:{}
+/*     selectedImage:{} */
 }
 
 export default function (state=initial,action) {
@@ -31,11 +31,11 @@ export default function (state=initial,action) {
         ...state,
         imageArray:[...state.imageArray,...action.images]
       }
-      case types.SELECTED_IMAGE:
+     /*  case types.SELECTED_IMAGE:
         return {
           ...state,
           selectedImage:{...state.selectedImage,...action.image}
-        }
+        } */
         default:
           return state;
   }

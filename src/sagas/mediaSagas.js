@@ -3,17 +3,24 @@ import { unsplashImages, shutterStockVideos } from '../Api/api';
 import * as types from '../constants/actionTypes';
 
 
-export function* searchMediaSaga({ payload }) {
+export function* searchMediaSaga(action) {
+ // console.log("act",action)
   try {
     yield put({ type: types.RESET_REDUCER_STORE })
     let images, imgArr, videos;
-    if (payload.searchCategory == "image") {
-      images = yield call(unsplashImages, payload.searchValue);
+    if (action.payload.searchCategory == "image") {
+      images = yield call(unsplashImages, action.payload.searchValue);
       imgArr = images.results;
+      if(imgArr.length == 0) {
+        throw new Error("No results found for your search criteria.Please change your search");
+      }
       yield put({ type: types.FLICKR_IMAGES_SUCCESS, images: imgArr });
     }
-    if (payload.searchCategory == "video") {
-      videos = yield call(shutterStockVideos, payload.searchValue);
+    if (action.payload.searchCategory == "video") {
+      videos = yield call(shutterStockVideos, action.payload.searchValue);
+      if(videos.length == 0) {
+        throw new Error("No results found for your search criteria.Please change your search");
+      }
       yield put({ type: types.SHUTTER_VIDEOS_SUCCESS, videos });
     }
   } catch (error) {

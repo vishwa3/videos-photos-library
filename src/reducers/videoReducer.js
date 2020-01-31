@@ -68,7 +68,7 @@ case types.SELECTED_VIDEO:
 
   const initial = {
     videoArray:[],
-      selectedVideo:{}
+     /*  selectedVideo:{} */
   }
   
   export default function (state=initial,action) {
@@ -78,11 +78,11 @@ case types.SELECTED_VIDEO:
           ...state,
           videoArray:[...state.videoArray,...action.videos]
         }
-        case types.SELECTED_VIDEO:
+      /*   case types.SELECTED_VIDEO:
           return {
             ...state,
             selectedVideo:{...state.selectedVideo,...action.video}
-          }
+          } */
           default:
             return state;
     }

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loader snapshot for Loader 1`] = `
+<div
+  className="loader centre"
+>
+  <i
+    className="fas fa-yin-yang fa-spin"
+  />
+</div>
+`;
