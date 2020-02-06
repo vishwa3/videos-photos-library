@@ -12,7 +12,7 @@ exports[`HomePage snapshot for HomePage 1`] = `
       }
     }
   >
-    Welcome to Media Library built with React, Redux, and Redux-saga 
+    Welcome to Media Library
   </h1>
   <div>
     <ul

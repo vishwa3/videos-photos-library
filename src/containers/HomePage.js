@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => (
   <div className="jumbotron center">
-    <h1 style={{fontFamily:'Pacifico'}} className="lead">Welcome to Media Library built with React, Redux, and Redux-saga </h1>
+    <h1 style={{fontFamily:'Pacifico'}} className="lead">Welcome to Media Library</h1>
     <div>
       <ul className="ul-home">
        <li><Link to="/searchImages"><i class="fas fa-image fa-2x"></i><span className="i-home">Check out our HD Images</span></Link></li>

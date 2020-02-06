@@ -9,7 +9,7 @@ import {
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import App from './containers/App'
-import Header from './common/Header';
+import Header from './containers/Header';
 import Photos from './containers/Photos'
 import Videos from './containers/Videos'
 import About from './containers/About'

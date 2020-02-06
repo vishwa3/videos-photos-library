@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Header from './Header';
+import Header from '../Header';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure } from 'enzyme';
 
