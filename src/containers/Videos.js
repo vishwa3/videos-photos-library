@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
+import React, { /* useEffect, */ useRef } from "react";
+/* import { useDispatch, useSelector } from "react-redux"; */
+import { useDispatch, useSelector } from './react-redux-hooks';
 import { searchMediaAction } from "../actions/mediaActions";
 import "../styles/style.css";
 import Loader from "./Loader";
@@ -9,7 +9,7 @@ function Videos() {
   const query = useRef(null);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  React.useEffect(() => {
     dispatch(searchMediaAction("dakota", "video"));
   }, []);
 
@@ -17,10 +17,10 @@ function Videos() {
   const error = useSelector(state => state.errorReducer.error);
 
   const handleSearch = event => {
+    console.log('hello world'); // console statement for the purpose of JEST/Enzyme testing
     event.preventDefault();
     if (query.current.value !== null && query.current.value !== "") {
       dispatch(searchMediaAction(query.current.value, "video"));
-      //dispatch(searchMediaThunk(query.current.value));
       query.current.value = "";
     }
   };
@@ -40,7 +40,6 @@ function Videos() {
               type="text"
               onKeyPress={handleKeyPress}
               style={{ marginRight: 5 }}
-              // ref={ref => (this.query = ref)}
               ref={query}
             />
             <input
@@ -68,7 +67,6 @@ function Videos() {
           type="text"
           onKeyPress={handleKeyPress}
           style={{ marginRight: 5 }}
-          // ref={ref => (this.query = ref)}
           ref={query}
         />
         <input

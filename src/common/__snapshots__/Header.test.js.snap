@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot for Header 1`] = `
+<div
+  className="text-center"
+>
+  <nav
+    className="navbar navbar-default space"
+  >
+    <div
+      className="collapse navbar-collapse"
+    >
+      <ul
+        className="nav navbar-nav vish"
+      >
+        <li
+          className="nav-item "
+        >
+          <a
+            aria-current="page"
+            className="active"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            Home
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            href="/searchImages"
+            onClick={[Function]}
+          >
+            Check out our HD Images
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            href="/searchVideos"
+            onClick={[Function]}
+          >
+            Watch Videos
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            href="/about"
+            onClick={[Function]}
+          >
+            About
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;

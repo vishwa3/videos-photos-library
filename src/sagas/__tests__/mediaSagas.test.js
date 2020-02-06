@@ -27,7 +27,7 @@ searchCategory: "image"
   }
 
   await runSaga(fakeStore,searchMediaSaga,action).done;
- // console.log("disp act", dispatchedActions)
+  
   expect(api.unsplashImages.mock.calls.length).toBe(1); 
   expect(dispatchedActions).toContainEqual({ type: 'FLICKR_IMAGES_SUCCESS', images: mockedImages });
 })
@@ -35,9 +35,9 @@ searchCategory: "image"
 test('should handle video load', async () => {
   const dispatchedActions = [];
 
-  const mockedVideos = ['img1', 'img2'];
+  const mockedVideos = ['imvid1g1', 'vid2'];
   const mock = {
-    results: ['img1', 'img2']
+    results: ['vid1', 'vid2']
   }
   api.shutterStockVideos = jest.fn(() => Promise.resolve(mockedVideos));
 

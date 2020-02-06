@@ -5,16 +5,13 @@ import { searchMediaAction } from "../actions/mediaActions";
 
 import "../styles/style.css";
 import Loader from "./Loader";
-import * as types from '../constants/actionTypes';
 
-export function Photos(props) {
+export function Photos() {
   const query = useRef(null);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     dispatch(searchMediaAction("dakota", "image"));
-    // query.current.focus();
-    // dispatch(searchMediaThunk("rain"));
   }, []);
 
   const images = useSelector(state => state.img.imageArray);
@@ -22,10 +19,10 @@ export function Photos(props) {
 
 
   const handleSearch = event => {
+    console.log('hello world'); // console statement for the purpose of JEST/Enzyme testing
     event.preventDefault();
     if (query.current.value !== null && query.current.value !== "") {
       dispatch(searchMediaAction(query.current.value, "image"));
-      //dispatch(searchMediaThunk(query.current.value));
       query.current.value = "";
     }
   };
@@ -44,7 +41,6 @@ export function Photos(props) {
               type="text"
               onKeyPress={handleKeyPress}
               style={{ marginRight: 5 }}
-              // ref={ref => (this.query = ref)}
               ref={query}
             />
             <input
@@ -74,7 +70,6 @@ export function Photos(props) {
             type="text"
             onKeyPress={handleKeyPress}
             style={{ marginRight: 5 }}
-            // ref={ref => (this.query = ref)}
             ref={query}
           />
           <input

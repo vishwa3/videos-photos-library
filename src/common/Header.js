@@ -1,35 +1,27 @@
 import React from 'react';
-//import { Link, IndexLink } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
-const Header = () => (
- /*  <div className="text-center">
-    <nav className="navbar navbar-default">
-      <NavLink to="/" activeClassName="active">Home</NavLink>
-      {" | "}
-      <Link to="library">Library</Link>
-    </nav>
-  </div> */
 
-  <div className="text-center fixNav">
-    <nav className="navbar navbar-default ">
+const Header = () => (
+  <div className="text-center">
+    <nav className="navbar navbar-default space">
       <div className="collapse navbar-collapse">
-        <ul className="nav navbar-nav">
-          <li className="nav-item active">
+        <ul className="nav navbar-nav vish">
+          <li className="nav-item ">
             <NavLink to="/" activeClassName="active">Home</NavLink>
           </li>
           <li className="nav-item">
-          <Link to="searchImages">Search Images</Link>
+            <Link to="searchImages">Check out our HD Images</Link>
           </li>
           <li className="nav-item">
-          <Link to="searchVideos">Search Videos</Link>
+            <Link to="searchVideos">Watch Videos</Link>
           </li>
           <li className="nav-item">
-            <Link to="library">About</Link>
+            <Link to="about">About</Link>
           </li>
         </ul>
       </div>
     </nav>
-  </div> 
+  </div>
 
 );
 

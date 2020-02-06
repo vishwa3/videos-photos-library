@@ -1,11 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Photos snapshot of Photos component 1`] = `
+exports[`Photos snapshot of Videos component 1`] = `
 <div
   className="container-fluid"
 >
   <div>
-     
     <div
       className="searchButton"
     >
@@ -22,7 +21,7 @@ exports[`Photos snapshot of Photos component 1`] = `
         className="btn btn-primary"
         onClick={[Function]}
         type="submit"
-        value="Search Images"
+        value="Search Videos"
       />
     </div>
     <h3>

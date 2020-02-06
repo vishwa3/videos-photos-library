@@ -15,16 +15,57 @@ exports[`HomePage snapshot for HomePage 1`] = `
     Welcome to Media Library built with React, Redux, and Redux-saga 
   </h1>
   <div>
-    <a
-      href="/library"
-      onClick={[Function]}
+    <ul
+      className="ul-home"
     >
-      <button
-        className="btn btn-lg btn-primary"
-      >
-         Visit Library
-      </button>
-    </a>
+      <li>
+        <a
+          href="/searchImages"
+          onClick={[Function]}
+        >
+          <i
+            class="fas fa-image fa-2x"
+          />
+          <span
+            className="i-home"
+          >
+            Check out our HD Images
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/searchVideos"
+          onClick={[Function]}
+        >
+          <i
+            class="fas fa-video fa-2x"
+          />
+          <span
+            className="i-home"
+          >
+            Watch Videos
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/about"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            class="fa fa-info-circle fa-2x"
+            className="i-home"
+          />
+          <span
+            className="i-home"
+          >
+            About
+          </span>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 `;
