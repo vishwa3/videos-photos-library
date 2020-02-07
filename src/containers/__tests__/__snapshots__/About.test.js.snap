@@ -33,6 +33,20 @@ exports[`About snapshot for About 1`] = `
       </span>
     </li>
     <li>
+      API : 
+      <span>
+        Have used 
+        <b>
+          UNSPLASH
+        </b>
+         for images and 
+        <b>
+          SHUTTERSTOCK
+        </b>
+         for videos
+      </span>
+    </li>
+    <li>
       Github link : 
       <a
         href="https://github.com/vishwa3/videos-photos-library-2"
