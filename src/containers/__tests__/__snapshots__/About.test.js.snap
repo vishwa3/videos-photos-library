@@ -46,6 +46,13 @@ exports[`About snapshot for About 1`] = `
       <b>
         NETLIFY
       </b>
+       
+      <a
+        href="https://www.netlify.com/"
+        target="_blank"
+      >
+        https://www.netlify.com/
+      </a>
     </li>
   </ul>
 </div>
