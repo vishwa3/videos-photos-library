@@ -1,12 +1,12 @@
 Application link - https://upbeat-lichterman-494dd9.netlify.com/
 
-#REACT CONCEPTS USED TO BUILD THE DEMO POC
-*React Hooks : Hooks used - useRef, useEffect, useDispatch, useSelector.Only functional components used.
-*Redux-saga : Redux middleware library used to handle side effects.
-*Testing : Have used JEST, Enzyme, react-test-renderer, and redux-mock-store for testing.JEST to run tests , Enzyme for making assertions, react-test-renderer to create snapshots of the component and redux-mock-store to create fake redux store for testing.Tests are in place for components with both snapshot and functionality testing.Tests are also in place for Actions, Reducers, and Sagas.
-*API : Have used UNSPLASH for images and SHUTTERSTOCK for videos
-*Github link : https://github.com/vishwa3/videos-photos-library
-*Application deployed on NETLIFY https://www.netlify.com/
+# REACT CONCEPTS USED TO BUILD THE DEMO POC
+* React Hooks : Hooks used - useRef, useEffect, useDispatch, useSelector.Only functional components used.
+* Redux-saga : Redux middleware library used to handle side effects.
+* Testing : Have used JEST, Enzyme, react-test-renderer, and redux-mock-store for testing.JEST to run tests , Enzyme for making assertions, react-test-renderer to create snapshots of the component and redux-mock-store to create fake redux store for testing.Tests are in place for components with both snapshot and functionality testing.Tests are also in place for Actions, Reducers, and Sagas.
+* API : Have used UNSPLASH for images and SHUTTERSTOCK for videos
+* Github link : https://github.com/vishwa3/videos-photos-library
+* Application deployed on NETLIFY https://www.netlify.com/
 
 
 
