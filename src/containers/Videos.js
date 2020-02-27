@@ -17,7 +17,7 @@ function Videos() {
   const error = useSelector(state => state.errorReducer.error);
 
   const handleSearch = event => {
-    console.log('hello world'); // console statement for the purpose of JEST/Enzyme testing
+   /*  console.log('hello world'); // console statement for the purpose of JEST/Enzyme testing */
     event.preventDefault();
     if (query.current.value !== null && query.current.value !== "") {
       dispatch(searchMediaAction(query.current.value, "video"));

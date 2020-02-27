@@ -1,0 +1,4 @@
+/src/containers/__tests__
+/src/reducers/__tests__
+/src/sagas/__tests__
+/src/actions/mediaActions.test.js

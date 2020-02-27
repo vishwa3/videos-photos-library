@@ -14,11 +14,11 @@ import Photos from './containers/Photos'
 import Videos from './containers/Videos'
 import About from './containers/About'
 const store = configureStore();
-store.subscribe(() => {
+/* store.subscribe(() => {
   const newState = store.getState();
   // check out your updated state
  //console.log("NS", newState)
-});
+}); */
 
 ReactDOM.render(
   <Provider store={store}>
