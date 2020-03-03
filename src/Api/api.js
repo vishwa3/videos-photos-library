@@ -1,18 +1,16 @@
+const SHUTTER_CLIENT_ID = process.env.REACT_APP_SHUTTER_CLIENT_ID;
+const SHUTTER_CLIENT_SECRET = process.env.REACT_APP_SHUTTER_CLIENT_SECRET;
+const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
-const SHUTTER_CLIENT_ID = '3434a56d8702085b9226';
-const SHUTTER_CLIENT_SECRET = '7698001661a2b347c2017dfd50aebb2519eda578';
-const UNSPLASH_KEY = '?client_id=5f96323678d05ff0c4eb264ef184556868e303b32a2db88ecbf15746e6f25e02';
-
-
-const basicAuth = () => 'Basic '.concat(window.btoa(`${SHUTTER_CLIENT_ID}:${SHUTTER_CLIENT_SECRET}`));
+const basicAuth = () =>
+  "Basic ".concat(window.btoa(`${SHUTTER_CLIENT_ID}:${SHUTTER_CLIENT_SECRET}`));
 const authParameters = {
   headers: {
     Authorization: basicAuth()
   }
 };
 
-
-export const shutterStockVideos = async (searchQuery) => {
+export const shutterStockVideos = async searchQuery => {
   const SHUTTERSTOCK_API_ENDPOINT = `https://api.shutterstock.com/v2/videos/search?query=${searchQuery}&page=1&per_page=20`;
   const response = await fetch(SHUTTERSTOCK_API_ENDPOINT, authParameters);
   const json = await response.json();
@@ -23,17 +21,17 @@ export const shutterStockVideos = async (searchQuery) => {
     id,
     mediaUrl: assets.preview_mp4.url,
     description
-  }))
-}
+  }));
+};
 
-
-
-export const unsplashImages = async (searchQuery) => {
-  const response = await fetch(`https://api.unsplash.com/search/photos/${UNSPLASH_KEY}&page=1&query=${searchQuery}&per_page=10`);
+export const unsplashImages = async searchQuery => {
+  const response = await fetch(
+    `https://api.unsplash.com/search/photos/${UNSPLASH_KEY}&page=1&query=${searchQuery}&per_page=10`
+  );
   const json = await response.json();
   if (response.status >= 400) {
     console.log("errj", json.errors);
     throw new Error(json.errors);
   }
   return json;
-}
+};

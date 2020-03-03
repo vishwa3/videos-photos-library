@@ -55,7 +55,6 @@ describe("Photos", () => {
   it('testing click', () => {
     const logSpy = jest.spyOn(console, 'log');
     const container = mount(<Videos store={store} />);
-    /* container.find('input[type="text"]').getDOMNode().value="rain"; */
     container.find('input[type="submit"]').simulate("click");
     expect(logSpy).toBeCalledWith('hello world')
 

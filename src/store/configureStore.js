@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from '../reducers/index';
-import rootSaga from '../sagas'; // TODO: Next step
+import rootSaga from '../sagas'; 
 import thunk from "redux-thunk";
 
 //  Returns the store instance

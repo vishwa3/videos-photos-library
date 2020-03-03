@@ -9,8 +9,6 @@ import * as ReactReduxHooks from '../react-redux-hooks'
 
 configure({ adapter: new Adapter() });
 
-/* const mockStore = configureMockStore();
-const store = mockStore({}); */
 
 describe("Photos", () => {
   let wrapper, useEffect, store;
@@ -58,7 +56,6 @@ describe("Photos", () => {
   it('testing click', () => {
     const logSpy = jest.spyOn(console, 'log');
     const container = mount(<Photos store={store} />);
-    /* container.find('input[type="text"]').getDOMNode().value="rain"; */
     container.find('input[type="submit"]').simulate("click");
     expect(logSpy).toBeCalledWith('hello world')
 

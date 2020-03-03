@@ -56,7 +56,6 @@ searchCategory: "video"
   }
 
   await runSaga(fakeStore,searchMediaSaga,action).done;
- // console.log("disp act", dispatchedActions)
   expect(api.shutterStockVideos.mock.calls.length).toBe(1);
   expect(dispatchedActions).toContainEqual({ type: 'SHUTTER_VIDEOS_SUCCESS', videos: mockedVideos });
 })
@@ -81,7 +80,6 @@ searchCategory: "image"
   }
 
   await runSaga(fakeStore,searchMediaSaga,action).done;
- // expect(api.unsplashImages.mock.calls.length).toBe(1);
   expect(dispatchedActions).toContainEqual({type:'SEARCH_MEDIA_FAILURE',error});
 
 })
