@@ -30,7 +30,6 @@ export const unsplashImages = async searchQuery => {
   );
   const json = await response.json();
   if (response.status >= 400) {
-    console.log("errj", json.errors);
     throw new Error(json.errors);
   }
   return json;

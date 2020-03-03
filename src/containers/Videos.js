@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 
 import { useDispatch, useSelector } from "./react-redux-hooks";
-import { searchMediaAction } from "../actions/mediaActions";
+import { searchMediaAction } from "../reducers/actions/mediaActions";
 import "../styles/style.css";
 import Loader from "./Loader";
+import SearchBar from "./SearchBar";
 
 function Videos() {
   const query = useRef(null);
@@ -40,20 +41,12 @@ function Videos() {
         <div>
           {videos.length > 0 ? (
             <div>
-              <div className="searchButton">
-                <input
-                  type="text"
-                  onKeyPress={handleKeyPress}
-                  style={{ marginRight: 5 }}
-                  ref={query}
-                />
-                <input
-                  type="submit"
-                  className="btn btn-primary"
-                  value="Search Videos"
-                  onClick={handleSearch}
-                />
-              </div>
+              <SearchBar
+                inputRef={query}
+                value="Search Videos"
+                handleSearch={handleSearch}
+                handleKeyPress={handleKeyPress}
+              />
               <div>
                 <h2 className="heading">Videos</h2>
                 <div style={{ textAlign: "center" }}>
@@ -77,20 +70,7 @@ function Videos() {
         </div>
       ) : (
         <div>
-          <div className="searchButton">
-            <input
-              type="text"
-              onKeyPress={handleKeyPress}
-              style={{ marginRight: 5 }}
-              ref={query}
-            />
-            <input
-              type="submit"
-              className="btn btn-primary"
-              value="Search Videos"
-              onClick={handleSearch}
-            />
-          </div>
+          <SearchBar />
           <h3>Error</h3>
           {error && <div className="error">{JSON.stringify(error)}</div>}
         </div>

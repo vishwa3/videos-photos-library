@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 
 import { useDispatch, useSelector } from "./react-redux-hooks";
-import { searchMediaAction } from "../actions/mediaActions";
+import { searchMediaAction } from "../reducers/actions/mediaActions";
 
 import "../styles/style.css";
 import Loader from "./Loader";
-
+import SearchBar from "./SearchBar";
 export function Photos() {
   const query = useRef(null);
   const dispatch = useDispatch();
@@ -40,21 +40,12 @@ export function Photos() {
         <div>
           {images.length > 0 ? (
             <div>
-              <div className="searchButton">
-                <input
-                  type="text"
-                  onKeyPress={handleKeyPress}
-                  style={{ marginRight: 5 }}
-                  ref={query}
-                />
-                <input
-                  type="submit"
-                  className="btn btn-primary"
-                  value="Search Images"
-                  id="search"
-                  onClick={handleSearch}
-                />
-              </div>
+              <SearchBar
+                inputRef={query}
+                value="Search Images"
+                handleSearch={handleSearch}
+                handleKeyPress={handleKeyPress}
+              />
               <div>
                 <h2 className="heading">Images</h2>
                 <div className="content">
@@ -83,21 +74,7 @@ export function Photos() {
         </div>
       ) : (
         <div>
-          {" "}
-          <div className="searchButton">
-            <input
-              type="text"
-              onKeyPress={handleKeyPress}
-              style={{ marginRight: 5 }}
-              ref={query}
-            />
-            <input
-              type="submit"
-              className="btn btn-primary"
-              value="Search Images"
-              onClick={handleSearch}
-            />
-          </div>
+          <SearchBar />
           <h3>Error</h3>
           {error && <div className="error">{JSON.stringify(error)}</div>}
         </div>

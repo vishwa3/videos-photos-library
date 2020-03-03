@@ -1,20 +1,18 @@
-import * as types from '../constants/actionTypes';
-
+import * as types from "./constants/actionTypes";
 
 const initial = {
-  imageArray: [],
-}
+  imageArray: []
+};
 
-export default function (state = initial, action) {
+export default function(state = initial, action) {
   switch (action.type) {
     case types.FLICKR_IMAGES_SUCCESS:
       return {
         ...state,
         imageArray: [...state.imageArray, ...action.images]
-      }
+      };
 
     default:
       return state;
   }
 }
-
